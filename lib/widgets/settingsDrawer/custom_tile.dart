@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../utils/screen_size.dart';
 import '../../themes/app_theme.dart';
 
 class CustomTile extends StatelessWidget {
@@ -15,14 +16,27 @@ class CustomTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Icon(icon),
-      iconColor: AppTheme.primaryColor,
-      title: Text(
-        title,
-        style: TextStyle(color: AppTheme.primaryColor),
-      ),
-      onTap: onTap,
+    return Column(
+      children: [
+        ListTile(
+          leading: Icon(icon),
+          iconColor: AppTheme.primaryColor,
+          title: Text(
+            title,
+            style: AppTheme.subtitle2(context).copyWith(
+              color: AppTheme.primaryColor,
+            ),
+          ),
+          onTap: onTap,
+        ),
+        SizedBox(
+          width: ScreenSizes.getScreenWidthSize(context) * 0.5,
+          child: Divider(
+            height: 1.5,
+            thickness: 1.5,
+          ),
+        ),
+      ],
     );
   }
 }

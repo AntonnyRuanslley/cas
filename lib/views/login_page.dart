@@ -1,10 +1,11 @@
-import 'package:flowcash/routes/routes_names.dart';
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../common/ui.dart';
+import '../routes/routes_names.dart';
 import '../themes/app_theme.dart';
-import '../utils/alert/alert_snack_bar.dart';
 import '../utils/loading_alert.dart';
 import '../utils/screen_size.dart';
 import '../controllers/auth_controller.dart';
@@ -152,10 +153,9 @@ class _LoginPageState extends State<LoginPage> {
                                   Get.offAllNamed(RoutesNames.splashScreenPage);
                                 } else {
                                   _inputPassword.clear();
-                                  alertSnackBar(
-                                    context: context,
-                                    message: "Email ou senha inválidos!",
-                                    backgroundColor: Colors.red,
+                                  Get.showSnackbar(
+                                    Ui.errorSnackBar(
+                                        message: "Email ou senha inválidos!"),
                                   );
                                 }
                               });

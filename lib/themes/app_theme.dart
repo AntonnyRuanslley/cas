@@ -35,4 +35,13 @@ class AppTheme {
       color: primaryText,
     );
   }
+
+  static TextStyle subtitle2(BuildContext context) {
+    return TextStyle(
+      fontFamily: "OpenSans-Regular",
+      fontSize: ScreenSizes.getScreenHeightSize(context) * 0.022,
+      fontWeight: FontWeight.w400,
+      color: primaryText,
+    );
+  }
 }

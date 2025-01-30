@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
 import '../../themes/app_theme.dart';
@@ -22,12 +23,12 @@ class InformationButtonsOptions extends GetView<TransactionController> {
     final sizeScreen = ScreenSizes.getScreenWidthSize(context);
     return Padding(
       padding: EdgeInsets.only(
-        left: sizeScreen * 0.01,
-        right: sizeScreen * 0.01,
-        bottom: sizeScreen * 0.03,
+        left: sizeScreen * 0.05,
+        right: sizeScreen * 0.05,
+        bottom: sizeScreen * 0.04,
       ),
       child: SizedBox(
-        width: sizeScreen * 1,
+        width: sizeScreen,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

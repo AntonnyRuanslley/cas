@@ -58,7 +58,7 @@ class TransactionTile extends GetView<CategoryController> {
         title: Text(
           transaction.description,
           style: TextStyle(
-            fontSize: sizeScreen * 0.025,
+            fontSize: sizeScreen * 0.027,
             fontWeight: FontWeight.bold,
             overflow: TextOverflow.ellipsis,
           ),
@@ -66,8 +66,8 @@ class TransactionTile extends GetView<CategoryController> {
         subtitle: Text(
           controller.searchCategory(transaction.category.id),
           style: TextStyle(
-            fontSize: sizeScreen * 0.027,
-            fontWeight: FontWeight.bold,
+            fontSize: sizeScreen * 0.025,
+            fontWeight: FontWeight.w500,
             overflow: TextOverflow.ellipsis,
           ),
         ),

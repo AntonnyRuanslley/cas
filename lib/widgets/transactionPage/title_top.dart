@@ -32,14 +32,15 @@ class TitleTop extends GetView<TransactionController> {
                   onPressed: () =>
                       controller.scaffoldKey.currentState!.openDrawer(),
                 ),
-                SizedBox(width: ScreenSizes.getScreenWidthSize(context) * 0.04),
-                Container(
-                  width: sizeScreen * 0.35,
-                  child: const Image(
-                    image: AssetImage(
-                      'assets/images/flowcash-nome-branco.png',
+                Expanded(
+                  child: Center(
+                    child: Image(
+                      image: AssetImage(
+                        'assets/images/flowcash-nome-branco.png',
+                      ),
+                      width: sizeScreen * 0.35,
+                      fit: BoxFit.contain,
                     ),
-                    fit: BoxFit.contain,
                   ),
                 ),
               ],

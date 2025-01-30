@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
-import '../utils/screen_size.dart';
 import '../themes/app_theme.dart';
 import '../services/settings_service.dart';
 import '../routes/routes_names.dart';
@@ -15,8 +15,6 @@ class SettingsDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final sizeScreen = ScreenSizes.getScreenHeightSize(context);
-
     return Drawer(
       backgroundColor: AppTheme.primaryColor,
       child: SafeArea(
@@ -31,10 +29,9 @@ class SettingsDrawer extends StatelessWidget {
                     const EdgeInsets.symmetric(vertical: 12, horizontal: 15),
                 child: Text(
                   'Configurações',
-                  style: TextStyle(
+                  style: AppTheme.subtitle1(context).copyWith(
                     color: AppTheme.primaryColor,
                     fontWeight: FontWeight.w500,
-                    fontSize: sizeScreen * 0.025,
                   ),
                 ),
               ),
@@ -43,9 +40,10 @@ class SettingsDrawer extends StatelessWidget {
                 icon: Icons.edit,
                 onTap: () => Get.toNamed(RoutesNames.categoriesPage),
               ),
-              Divider(
-                height: 1,
-                thickness: 1,
+              CustomTile(
+                title: 'Rélatorio',
+                icon: Icons.bar_chart_rounded,
+                onTap: () => Get.toNamed(RoutesNames.categoriesPage),
               ),
               Expanded(
                 child: Column(
