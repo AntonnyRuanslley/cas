@@ -1,3 +1,4 @@
+import 'package:flowcash/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class EmptyList extends StatelessWidget {
@@ -13,32 +14,34 @@ class EmptyList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: Container(
-            height: imageSize,
-            child: Image(
-              image: AssetImage(
-                'assets/images/vazio.png',
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: Container(
+              height: imageSize,
+              child: Image(
+                image: AssetImage(
+                  'assets/images/vazio.png',
+                ),
+                color: color,
+                fit: BoxFit.cover,
               ),
-              color: color,
-              fit: BoxFit.cover,
             ),
           ),
-        ),
-        Container(
-          child: Text(
-            'Sem categorias!',
-            style: TextStyle(
-              fontSize: fontSize,
-              color: color,
+          Container(
+            child: Text(
+              'Sem categorias!',
+              style: AppTheme.subtitle1(context).copyWith(
+                fontSize: fontSize,
+                color: color,
+              ),
             ),
-          ),
-        )
-      ],
+          )
+        ],
+      ),
     );
   }
 }

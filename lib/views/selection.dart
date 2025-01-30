@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
 import '../themes/app_theme.dart';
@@ -35,38 +36,31 @@ class SelectionPage extends GetView<SelectionController> {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    SizedBox(height: sizeScreen * 0.025),
-                    SizedBox(
-                      height: sizeScreen * 0.07,
-                      child: Image(
-                        image: AssetImage(
-                          'assets/images/flowcash-nome-branco.png',
-                        ),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
                   ],
                 ),
               ),
               Text(
                 'Deseja qual tipo de armazenamento?',
-                style: AppTheme.title2(context),
+                style: AppTheme.title1(context)
+                    .copyWith(color: AppTheme.backgroundColor),
                 textAlign: TextAlign.center,
               ),
               SizedBox(
                 height: sizeScreen * 0.04,
               ),
-              Row(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CustomButton(
+                    icon: Icons.cloud,
                     label: "Online",
                     height: ScreenSizes.getScreenHeightSize(context) * 0.065,
                     width: sizeScreen * 0.2,
                     onPressed: () => controller.onChoice(isOnline: true),
                   ),
-                  SizedBox(width: sizeScreen * 0.03),
+                  SizedBox(height: sizeScreen * 0.03),
                   CustomButton(
+                    icon: Icons.cloud_off_outlined,
                     label: "Offline",
                     height: ScreenSizes.getScreenHeightSize(context) * 0.065,
                     width: sizeScreen * 0.2,

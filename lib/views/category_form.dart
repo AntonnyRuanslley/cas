@@ -1,3 +1,4 @@
+import 'package:flowcash/widgets/custom/button_base.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,6 +20,7 @@ class CategoryForm extends StatefulWidget {
 
 class _CategoryFormState extends State<CategoryForm> {
   final inputName = TextEditingController();
+  bool blockSubmit = true;
 
   @override
   void initState() {
@@ -51,6 +53,18 @@ class _CategoryFormState extends State<CategoryForm> {
       }
     }
 
+    void onBlockSubmit(String text) {
+      if (text.isNotEmpty && text != widget.category?.name) {
+        setState(() {
+          blockSubmit = false;
+        });
+      } else if (!blockSubmit) {
+        setState(() {
+          blockSubmit = true;
+        });
+      }
+    }
+
     return AlertDialog(
       title: Text(
         widget.category == null ? "Nova categoria" : "Edição de categoria",
@@ -58,9 +72,12 @@ class _CategoryFormState extends State<CategoryForm> {
       content: SingleChildScrollView(
         child: Column(
           children: [
-            TextField(
+            TextFormField(
+              autofocus: true,
               controller: inputName,
-              onSubmitted: (_) => onSubmit(),
+              onFieldSubmitted: (_) => onSubmit(),
+              keyboardType: TextInputType.name,
+              onChanged: onBlockSubmit,
               decoration: InputDecoration(
                 labelText: 'Nome',
                 focusedBorder: OutlineInputBorder(
@@ -97,19 +114,11 @@ class _CategoryFormState extends State<CategoryForm> {
                     onPressed: () => Get.back(),
                   ),
                   SizedBox(width: sizeScreen * 0.02),
-                  TextButton(
-                    child: Text(
-                      widget.category == null ? 'Adicionar' : 'Salvar',
-                      style: TextStyle(
-                        fontSize: sizeScreen * 0.047,
-                        fontWeight: FontWeight.bold,
-                        color: AppTheme.secondyColor,
-                      ),
-                    ),
-                    style: TextButton.styleFrom(
-                      backgroundColor: AppTheme.primaryColor,
-                    ),
-                    onPressed: () => onSubmit(),
+                  ButtonBase(
+                    label: widget.category == null ? 'Adicionar' : 'Salvar',
+                    onPressed: blockSubmit ? null : () => onSubmit(),
+                    width: 100,
+                    elevation: blockSubmit ? 1 : null,
                   ),
                 ],
               ),

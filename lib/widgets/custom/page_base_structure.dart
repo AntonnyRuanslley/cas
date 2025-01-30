@@ -29,16 +29,21 @@ class PageBaseStructure extends StatelessWidget {
         backgroundColor: AppTheme.backgroundColor,
         appBar: AppBar(
           backgroundColor: AppTheme.primaryColor,
-          title: Text(
-            title,
-            style: TextStyle(
-              color: AppTheme.secondyColor,
+          title: Center(
+            child: Text(
+              title,
+              style: AppTheme.title2(context).copyWith(
+                color: AppTheme.secondyColor,
+              ),
             ),
           ),
           iconTheme: IconThemeData(color: AppTheme.backgroundColor),
           actions: actions,
         ),
-        body: child,
+        body: Padding(
+          padding: EdgeInsets.symmetric(vertical: 10),
+          child: child,
+        ),
         floatingActionButton: floatingActionButton,
       ),
     );

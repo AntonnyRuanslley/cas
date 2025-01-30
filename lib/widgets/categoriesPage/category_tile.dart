@@ -26,12 +26,11 @@ class CategoryTile extends GetView<CategoryController> {
       ),
       child: Card(
         color: Colors.white,
-        elevation: 8,
+        elevation: 10,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
         child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-          ),
           padding: EdgeInsets.symmetric(
             vertical: 20,
             horizontal: 15,
@@ -60,8 +59,9 @@ class CategoryTile extends GetView<CategoryController> {
                   alertDialog(
                     title: "Deseja realmente excluir?",
                     subtitle: "A categoria será excluida permanentemente!",
-                    function: () =>
-                        controller.deleteCategory(categoryId: category.id),
+                    function: () => controller.deleteCategory(
+                      categoryId: category.id,
+                    ),
                   );
                 },
                 child: Icon(
