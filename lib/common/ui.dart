@@ -31,7 +31,7 @@ class Ui {
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
       borderRadius: 8,
       dismissDirection: DismissDirection.horizontal,
-      duration: Duration(seconds: 2),
+      duration: Duration(seconds: 1),
     );
   }
 
@@ -64,7 +64,7 @@ class Ui {
       ),
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
       borderRadius: 8,
-      duration: Duration(seconds: 2),
+      duration: Duration(seconds: 1),
     );
   }
 }

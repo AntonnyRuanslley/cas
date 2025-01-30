@@ -34,10 +34,6 @@ class GetPagesRoute {
       binding: SelectionBinding(),
     ),
     GetPage(
-      name: RoutesNames.noConnectionPage,
-      page: () => const NoConnectionPage(),
-    ),
-    GetPage(
       name: RoutesNames.transactionsListPage,
       page: () => TransactionsListPage(),
       binding: TransactionListBinding(),
@@ -46,6 +42,10 @@ class GetPagesRoute {
       name: RoutesNames.categoriesPage,
       page: () => CategoriesPage(),
       binding: CategoryBinding(),
-    )
+    ),
+    GetPage(
+      name: RoutesNames.noConnectionPage,
+      page: () => const NoConnectionPage(),
+    ),
   ];
 }

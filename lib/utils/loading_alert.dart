@@ -27,7 +27,7 @@ Future<dynamic> loadingDialog({
               const SizedBox(height: 10),
               Text(
                 msg,
-                style: AppTheme.title1(context),
+                style: AppTheme.subtitle1(context),
               ),
             ],
           ),

@@ -7,10 +7,9 @@ void implementDeleteCategory({
 
   final categoriesBox = Hive.box('categories');
   await categoriesBox.delete(categoryId);
-  Get.back();
+  await Future.delayed(Duration(seconds: 1), () {
+    Get.back();
+  });
   Get.find<CategoryController>().refresh();
-
-  Get.showSnackbar(
-    Ui.successSnackBar(message: "Categoria deletada!"),
-  );
+  Get.showSnackbar(Ui.successSnackBar(message: "Categoria deletada!"));
 }

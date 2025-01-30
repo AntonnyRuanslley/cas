@@ -12,8 +12,8 @@ class AppTheme {
   static TextStyle title1(BuildContext context) {
     return TextStyle(
       fontFamily: "OpenSans-Regular",
-      fontSize: ScreenSizes.getScreenHeightSize(context) * 0.025,
-      fontWeight: FontWeight.normal,
+      fontSize: ScreenSizes.getScreenHeightSize(context) * 0.035,
+      fontWeight: FontWeight.bold,
       color: primaryText,
     );
   }
@@ -21,7 +21,7 @@ class AppTheme {
   static TextStyle title2(BuildContext context) {
     return TextStyle(
       fontFamily: "OpenSans-Regular",
-      fontSize: ScreenSizes.getScreenHeightSize(context) * 0.03,
+      fontSize: ScreenSizes.getScreenHeightSize(context) * 0.027,
       fontWeight: FontWeight.bold,
       color: primaryText,
     );
