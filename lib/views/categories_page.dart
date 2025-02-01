@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../utils/screen_size.dart';
-import '../utils/open_form.dart';
-import '../../themes/app_theme.dart';
+import '../utils/dialogs/open_form.dart';
 import '../controllers/categoryController/category_controller.dart';
 import '../../views/category_form.dart';
 import '../../widgets/categoriesPage/category_tile.dart';
@@ -34,7 +33,6 @@ class CategoriesPage extends GetView<CategoryController> {
             ? EmptyList(
                 imageSize: sizeScreen * 0.2,
                 fontSize: sizeScreen * 0.04,
-                color: AppTheme.primaryColor,
                 message: 'Sem categorias!',
               )
             : ListView.builder(

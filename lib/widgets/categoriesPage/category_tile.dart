@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:get/get.dart';
 
-import '../../utils/open_form.dart';
-import '../../utils/alert/alert_dialog.dart';
+import '../../utils/dialogs/open_form.dart';
+import '../../utils/dialogs/alert_dialog.dart';
 import '../../themes/app_theme.dart';
 import '../../models/category.dart';
 import '../../controllers/categoryController/category_controller.dart';

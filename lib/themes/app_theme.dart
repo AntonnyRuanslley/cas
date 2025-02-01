@@ -1,4 +1,5 @@
 import '../utils/screen_size.dart';
+
 import 'package:flutter/material.dart';
 
 class AppTheme {

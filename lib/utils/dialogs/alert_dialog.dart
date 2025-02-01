@@ -34,17 +34,14 @@ Future<dynamic> alertDialog({
               )
             : null,
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: ButtonBase(
-              label: buttonLabel ?? 'Ok',
-              height: 40,
-              width: 100,
-              onPressed: () {
-                Get.back();
-                if (function != null) function();
-              },
-            ),
+          ButtonBase(
+            label: buttonLabel ?? 'Ok',
+            height: 40,
+            width: 100,
+            onPressed: () {
+              Get.back();
+              if (function != null) function();
+            },
           ),
         ],
       );

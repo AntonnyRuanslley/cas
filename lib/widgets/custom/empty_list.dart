@@ -2,16 +2,16 @@ import 'package:flowcash/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class EmptyList extends StatelessWidget {
-  final double fontSize;
-  final double imageSize;
-  final Color color;
   final String message;
+  final double? fontSize;
+  final double? imageSize;
+  final Color? color;
   const EmptyList({
     super.key,
-    required this.fontSize,
-    required this.imageSize,
-    required this.color,
     required this.message,
+    this.fontSize,
+    this.imageSize,
+    this.color = const Color(0xFF808080),
   });
 
   @override

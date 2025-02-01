@@ -1,3 +1,4 @@
+import 'package:flowcash/utils/pick_date_modal.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -5,8 +6,8 @@ import '../../themes/app_theme.dart';
 import '../../utils/screen_size.dart';
 
 class SelectDate extends StatelessWidget {
-  final Function() onPressed;
   final DateTime selectDate;
+  final Function(DateTime)onPressed;
 
   const SelectDate({
     Key? key,
@@ -19,7 +20,11 @@ class SelectDate extends StatelessWidget {
     final sizeScreen = ScreenSizes.getScreenWidthSize(context);
 
     return InkWell(
-      onTap: onPressed,
+      onTap: () => pickDateModal(
+        context: context,
+        oldDate: selectDate,
+        selectedDate: onPressed,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

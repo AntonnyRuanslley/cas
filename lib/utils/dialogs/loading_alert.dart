@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../themes/app_theme.dart';
+import '../../themes/app_theme.dart';
 
 Future<dynamic> loadingDialog({
   required String msg,

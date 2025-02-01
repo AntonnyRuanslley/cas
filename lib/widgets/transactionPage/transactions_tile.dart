@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../utils/format_value.dart';
-import '../../utils/open_form.dart';
+import '../../utils/dialogs/open_form.dart';
 import '../../utils/screen_size.dart';
 import '../../models/transaction.dart';
 import '../../themes/app_theme.dart';

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../utils/screen_size.dart';
-import '../../themes/app_theme.dart';
 import '../../controllers/transactionController/transaction_controller.dart';
 import '../../widgets/transactionPage/transactions_tile.dart';
 import '../../widgets/custom/empty_list.dart';
@@ -19,9 +18,8 @@ class TransactionsListBody extends GetView<TransactionController> {
       return Expanded(
         child: controller.dayTransactions.isEmpty
             ? EmptyList(
-                fontSize: screenSize * 0.05,
-                imageSize: screenSize * 0.25,
-                color: AppTheme.primaryText,
+                fontSize: screenSize * 0.042,
+                imageSize: screenSize * 0.22,
                 message: "Sem transações!",
               )
             : ListView.builder(

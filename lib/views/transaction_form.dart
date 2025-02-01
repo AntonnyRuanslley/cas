@@ -1,14 +1,14 @@
-import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
+
+import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 
 import '../themes/app_theme.dart';
 import '../models/transaction.dart';
 import '../utils/format_value.dart';
-import '../utils/open_form.dart';
+import '../utils/dialogs/open_form.dart';
 import '../utils/screen_size.dart';
-import '../utils/select_date_modal.dart';
-import '../widgets/transactionForm/select_transaction_type.dart';
 import '../views/category_form.dart';
+import '../widgets/transactionForm/select_transaction_type.dart';
 import '../widgets/transactionForm/categorys_select.dart';
 import '../widgets/transactionForm/form_buttons.dart';
 import '../widgets/transactionForm/select_date.dart';
@@ -127,7 +127,7 @@ class _TransactionFormState extends State<TransactionForm> {
                           controller: inputValue,
                           keyboardType: TextInputType.numberWithOptions(),
                           inputFormatters: [
-                            CurrencyTextInputFormatter(
+                            CurrencyTextInputFormatter.currency(
                               locale: 'pt',
                               decimalDigits: 2,
                               symbol: '',
@@ -150,15 +150,11 @@ class _TransactionFormState extends State<TransactionForm> {
                   ),
                   SelectDate(
                     selectDate: selectDate,
-                    onPressed: () => selectDateModal(
-                      context: context,
-                      oldDate: selectDate,
-                      selectedDate: (newDate) {
-                        setState(() {
-                          selectDate = newDate;
-                        });
-                      },
-                    ),
+                    onPressed: (newDate) {
+                      setState(() {
+                        selectDate = newDate;
+                      });
+                    },
                   ),
                   FormButtons(
                     inputDescription: inputDescription,

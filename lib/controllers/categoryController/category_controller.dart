@@ -5,7 +5,7 @@ import 'package:flowcash/models/category.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 
-import '../../utils/loading_alert.dart';
+import '../../utils/dialogs/loading_alert.dart';
 
 part 'get_categories.dart';
 part 'create_category.dart';

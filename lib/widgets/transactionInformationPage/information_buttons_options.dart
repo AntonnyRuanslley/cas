@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 
 import '../../themes/app_theme.dart';
 import '../../models/transaction.dart';
-import '../../utils/open_form.dart';
+import '../../utils/dialogs/open_form.dart';
 import '../../utils/screen_size.dart';
-import '../../utils/alert/alert_dialog.dart';
+import '../../utils/dialogs/alert_dialog.dart';
 import '../../controllers/transactionController/transaction_controller.dart';
 import '../../views/transaction_form.dart';
 

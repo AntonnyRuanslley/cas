@@ -6,8 +6,8 @@ import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 
 import '../../models/transaction.dart';
-import '../../utils/alert/alert_dialog.dart';
-import '../../utils/loading_alert.dart';
+import '../../utils/dialogs/alert_dialog.dart';
+import '../../utils/dialogs/loading_alert.dart';
 import '../../common/ui.dart';
 import '../../services/settings_service.dart';
 

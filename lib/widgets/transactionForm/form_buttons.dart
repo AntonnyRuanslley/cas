@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../utils/alert/alert_dialog.dart';
-import '../../utils/loading_alert.dart';
+import '../../utils/dialogs/alert_dialog.dart';
+import '../../utils/dialogs/loading_alert.dart';
 import '../../utils/screen_size.dart';
 import '../../themes/app_theme.dart';
 import '../../controllers/transactionController/transaction_controller.dart';

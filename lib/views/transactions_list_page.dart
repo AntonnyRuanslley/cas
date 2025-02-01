@@ -1,5 +1,5 @@
 import 'package:flowcash/themes/app_theme.dart';
-import 'package:flowcash/utils/open_form.dart';
+import 'package:flowcash/utils/dialogs/open_form.dart';
 import 'package:flowcash/views/transaction_form.dart';
 import 'package:flowcash/widgets/transactionPage/transactions_list_body.dart';
 import 'package:get/get.dart';
