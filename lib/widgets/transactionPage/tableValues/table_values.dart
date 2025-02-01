@@ -19,7 +19,8 @@ class TableValues extends GetView<TransactionController> {
     final sizeScreen = ScreenSizes.getScreenHeightSize(context);
 
     return Obx(() {
-      return Container(
+      return AnimatedContainer(
+        duration: Duration(milliseconds: 450),
         margin: EdgeInsetsDirectional.only(
           start: sizeScreen * 0.015,
           top: sizeScreen * 0.1,
