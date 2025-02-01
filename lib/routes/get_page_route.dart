@@ -1,11 +1,11 @@
-import 'package:flowcash/bindings/category_binding.dart';
-import 'package:flowcash/views/categories_page.dart';
 import 'package:get/get.dart';
 
 import '../routes/routes_names.dart';
 import '../bindings/selection_binding.dart';
 import '../bindings/splash_screen_binding.dart';
 import '../bindings/transaction_binding.dart';
+import '../bindings/category_binding.dart';
+import '../views/categories_page.dart';
 import '../views/selection.dart';
 import '../views/home_page.dart';
 import '../views/login_page.dart';
@@ -36,12 +36,11 @@ class GetPagesRoute {
     GetPage(
       name: RoutesNames.transactionsListPage,
       page: () => TransactionsListPage(),
-      binding: TransactionListBinding(),
+      bindings: [TransactionListBinding(), CategoryBinding()],
     ),
     GetPage(
       name: RoutesNames.categoriesPage,
-      page: () => CategoriesPage(),
-      binding: CategoryBinding(),
+      page: () => const CategoriesPage(),
     ),
     GetPage(
       name: RoutesNames.noConnectionPage,

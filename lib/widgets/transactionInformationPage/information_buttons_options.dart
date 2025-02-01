@@ -25,7 +25,6 @@ class InformationButtonsOptions extends GetView<TransactionController> {
       padding: EdgeInsets.only(
         left: sizeScreen * 0.05,
         right: sizeScreen * 0.05,
-        bottom: sizeScreen * 0.04,
       ),
       child: SizedBox(
         width: sizeScreen,

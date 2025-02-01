@@ -29,11 +29,11 @@ class _CategorysSelectState extends State<CategorysSelect> {
   void initState() {
     super.initState();
     if (widget.categoryId != null) {
-      final Category categorySelected = Get.find<CategoryController>()
+      final Category? categorySelected = Get.find<CategoryController>()
           .categories
           .value
-          .firstWhere((category) => category.id == widget.categoryId);
-      category = categorySelected.id;
+          .firstWhereOrNull((category) => category.id == widget.categoryId);
+      category = categorySelected?.id;
     }
   }
 
@@ -72,17 +72,26 @@ class _CategorysSelectState extends State<CategorysSelect> {
         borderRadius: BorderRadius.circular(sizeScreen * 0.04),
         isExpanded: true,
         value: category,
-        items: categories.map((categorySelected) {
-          return DropdownMenuItem(
-            value: categorySelected.id,
-            child: Text(categorySelected.name ?? ""),
-          );
-        }).toList(),
+        items: categories.isNotEmpty
+            ? categories.map((categorySelected) {
+                return DropdownMenuItem(
+                  value: categorySelected.id,
+                  child: Text(categorySelected.name ?? "--------"),
+                );
+              }).toList()
+            : [
+                DropdownMenuItem(
+                  value: 1,
+                  child: Text("Sem categorias!"),
+                )
+              ],
         onChanged: (int? newCategory) {
-          setState(() {
-            category = newCategory!;
-          });
-          widget.onSubmit(category!);
+          if (categories.isNotEmpty) {
+            setState(() {
+              category = newCategory!;
+            });
+            widget.onSubmit(category!);
+          }
         },
       ),
     );

@@ -62,6 +62,6 @@ class CategoryController extends GetxController {
         return category.name!;
       }
     }
-    return "Sem categoria";
+    return "----------";
   }
 }

@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class FormatValue {
   static getMoneyFormat(double value) {
     if (value == 0.0) {
-      return NumberFormat(' R\$ 0.00', 'pt-BR').format(value);
+      return NumberFormat('R\$ 0.00', 'pt-BR').format(value);
     } else {
-      return NumberFormat(' R\$ ###,###,###.00', 'pt-BR').format(value);
+      return NumberFormat('R\$ ###,###,###.00', 'pt-BR').format(value);
     }
   }
 

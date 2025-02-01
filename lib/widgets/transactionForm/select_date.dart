@@ -7,7 +7,7 @@ import '../../utils/screen_size.dart';
 
 class SelectDate extends StatelessWidget {
   final DateTime selectDate;
-  final Function(DateTime)onPressed;
+  final Function(DateTime) onPressed;
 
   const SelectDate({
     Key? key,
@@ -26,13 +26,13 @@ class SelectDate extends StatelessWidget {
         selectedDate: onPressed,
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Icon(
             Icons.date_range_outlined,
             color: AppTheme.secondyColor,
             size: sizeScreen * 0.082,
           ),
+          SizedBox(width: sizeScreen * 0.05),
           Container(
             width: sizeScreen * 0.45,
             child: Text(
