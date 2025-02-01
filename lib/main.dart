@@ -1,3 +1,4 @@
+import 'package:flowcash/services/suggestion_service.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +18,7 @@ void main() async {
   await Hive.openBox('transactions');
   await Hive.openBox('categories');
   await Get.putAsync(() => SettingsService().init());
+  await Get.putAsync(() => SuggestionService().init());
   Get.log('All services started...');
   runApp(const MyApp());
 }

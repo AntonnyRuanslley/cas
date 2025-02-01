@@ -98,7 +98,7 @@ class _CategoryFormState extends State<CategoryForm> {
               cursorColor: AppTheme.primaryColor,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
+              padding: const EdgeInsets.only(top: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [

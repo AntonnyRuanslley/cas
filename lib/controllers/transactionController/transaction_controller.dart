@@ -1,17 +1,20 @@
 // ignore_for_file: invalid_use_of_protected_member
 
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 
 import '../../models/transaction.dart';
+import '../../services/suggestion_service.dart';
 import '../../utils/dialogs/alert_dialog.dart';
 import '../../utils/dialogs/loading_alert.dart';
 import '../../common/ui.dart';
 import '../../services/settings_service.dart';
 
 part 'get_transaction_calculations.dart';
+part 'get_suggestions_titles.dart';
 part 'create_transaction.dart';
 part 'update_transaction.dart';
 part 'delete_transaction.dart';
@@ -23,6 +26,7 @@ class TransactionController extends GetxController {
   final allTransactions = <Transaction>[].obs;
   final dayTransactions = <Transaction>[].obs;
   final transactionsCalculations = <String, dynamic>{}.obs;
+  final suggestionsTitles = <String>[].obs;
   final selectedDate = DateTime.now().obs;
 
   @override
@@ -39,6 +43,14 @@ class TransactionController extends GetxController {
   void setDate(DateTime _newDate) {
     selectedDate.value = _newDate;
     refresh();
+  }
+
+  void getSuggestionsTitles(String text) {
+    suggestionsTitles.value = implementGetSuggestionsTitles(text: text);
+  }
+
+  void cleanSuggestionsTitles() {
+    suggestionsTitles.clear();
   }
 
   void getTransanctions() {

@@ -1,19 +1,20 @@
 import 'dart:convert';
 
-import 'package:flowcash/controllers/categoryController/category_controller.dart';
-import 'package:flowcash/data/users.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../data/urls.dart';
+import '../data/users.dart';
 
 class SettingsService extends GetxService {
   bool? _hasChoice;
   bool? _isOnline;
+  // bool? _activeBoxSuggestion;
 
   bool get hasChoice => _hasChoice ?? false;
   bool get isOnline => _isOnline ?? false;
+  // bool get activeBoxSuggestion => _activeBoxSuggestion ?? false;
 
   Future<SettingsService> init() async {
     await getChoice();

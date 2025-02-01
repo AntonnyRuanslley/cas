@@ -41,9 +41,9 @@ class SettingsDrawer extends StatelessWidget {
                 onTap: () => Get.toNamed(RoutesNames.categoriesPage),
               ),
               CustomTile(
-                title: 'Rélatorio',
+                title: 'Relatório',
                 icon: Icons.bar_chart_rounded,
-                onTap: () => Get.toNamed(RoutesNames.categoriesPage),
+                onTap: () {},
               ),
               Expanded(
                 child: Column(
