@@ -5,6 +5,8 @@ import '../bindings/selection_binding.dart';
 import '../bindings/splash_screen_binding.dart';
 import '../bindings/transaction_binding.dart';
 import '../bindings/category_binding.dart';
+import '../bindings/report_category_binding.dart';
+import '../views/report_page.dart';
 import '../views/categories_page.dart';
 import '../views/selection.dart';
 import '../views/home_page.dart';
@@ -41,6 +43,11 @@ class GetPagesRoute {
     GetPage(
       name: RoutesNames.categoriesPage,
       page: () => const CategoriesPage(),
+    ),
+    GetPage(
+      name: RoutesNames.reportPage,
+      page: () => const ReportPage(),
+      binding: ReportBinding(),
     ),
     GetPage(
       name: RoutesNames.noConnectionPage,
