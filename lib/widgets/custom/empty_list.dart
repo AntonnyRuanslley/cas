@@ -5,11 +5,13 @@ class EmptyList extends StatelessWidget {
   final double fontSize;
   final double imageSize;
   final Color color;
+  final String message;
   const EmptyList({
     super.key,
     required this.fontSize,
     required this.imageSize,
     required this.color,
+    required this.message,
   });
 
   @override
@@ -33,7 +35,7 @@ class EmptyList extends StatelessWidget {
           ),
           Container(
             child: Text(
-              'Sem categorias!',
+              message,
               style: AppTheme.subtitle1(context).copyWith(
                 fontSize: fontSize,
                 color: color,

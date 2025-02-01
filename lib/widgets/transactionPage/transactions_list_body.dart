@@ -22,6 +22,7 @@ class TransactionsListBody extends GetView<TransactionController> {
                 fontSize: screenSize * 0.05,
                 imageSize: screenSize * 0.25,
                 color: AppTheme.primaryText,
+                message: "Sem transações!",
               )
             : ListView.builder(
                 itemCount: controller.dayTransactions.length,

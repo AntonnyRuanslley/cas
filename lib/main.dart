@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
+
+import 'package:get/get.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:get/get.dart';
 import 'package:material_color_generator/material_color_generator.dart';
 
 import '../routes/get_page_route.dart';

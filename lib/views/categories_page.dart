@@ -35,6 +35,7 @@ class CategoriesPage extends GetView<CategoryController> {
                 imageSize: sizeScreen * 0.2,
                 fontSize: sizeScreen * 0.04,
                 color: AppTheme.primaryColor,
+                message: 'Sem categorias!',
               )
             : ListView.builder(
                 itemCount: controller.categories.length,
